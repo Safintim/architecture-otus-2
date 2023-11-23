@@ -39,5 +39,5 @@ jobs:
       run: poetry run pytest
     - name: Run linters
       run: |
-          poetry run mypy
-          poetry run ruff check
+          poetry run mypy .
+          poetry run ruff check .
