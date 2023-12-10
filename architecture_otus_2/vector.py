@@ -15,5 +15,9 @@ class Vector:
             return NotImplemented
         return self.x == other.x and self.y == other.y
 
+    @classmethod
+    def minus(cls, v1: Self, v2: Self) -> Self:
+        return cls(v1.x - v2.x, v1.y - v2.y)
+
     def __hash__(self) -> int:
         return hash((self.x, self.y))
