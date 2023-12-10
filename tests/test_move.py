@@ -1,6 +1,6 @@
 import pytest
 from typing import Any
-from architecture_otus_2.move import Move
+from architecture_otus_2.commands.move import Move
 from architecture_otus_2.vector import Vector
 from unittest.mock import Mock
 

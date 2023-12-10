@@ -1,6 +1,6 @@
 import pytest
 from typing import Any
-from architecture_otus_2.rotate import Rotate
+from architecture_otus_2.commands.rotate import Rotate
 from unittest.mock import Mock
 
 

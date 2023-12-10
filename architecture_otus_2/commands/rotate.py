@@ -1,18 +1,6 @@
-from typing import Final, Protocol
+from typing import Final
 
-
-class Rotable(Protocol):
-    def get_direction(self) -> int:
-        ...
-
-    def set_direction(self, direction: int) -> None:
-        ...
-
-    def get_angle_velocity(self) -> int:
-        ...
-
-    def get_directions_number(self) -> int:
-        ...
+from architecture_otus_2.commands.interfaces import Rotable
 
 
 class Rotate:

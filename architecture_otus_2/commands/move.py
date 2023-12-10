@@ -1,16 +1,6 @@
-from typing import Protocol, Final
-from .vector import Vector
-
-
-class Movable(Protocol):
-    def set_location(self, v: Vector) -> None:
-        ...
-
-    def get_location(self) -> Vector:
-        ...
-
-    def get_velocity(self) -> Vector:
-        ...
+from typing import Final
+from architecture_otus_2.vector import Vector
+from architecture_otus_2.commands.interfaces import Movable
 
 
 class Move:
