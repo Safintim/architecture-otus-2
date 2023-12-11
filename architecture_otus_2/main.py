@@ -1,3 +1,4 @@
+from typing import Any
 from architecture_otus_2.exception_handler import (
     ExceptionHandler,
     RepeatCommandHandler,
@@ -8,6 +9,15 @@ from architecture_otus_2.exception_handler import (
     log_exception_command_maker,
     second_repeat_command_maker,
 )
+from architecture_otus_2.commands import (
+    MacroCommand,
+    BurnFuelCommand,
+    CheckFuelComamnd,
+    Move,
+    Rotate,
+    ChangeVelocityCommand,
+)
+from unittest.mock import Mock
 
 from queue import Queue
 
@@ -38,4 +48,16 @@ def main() -> None:
         SecondRepeatCommand,
         Exception,
         write_log_handler,
+    )
+
+    # движения по прямой с расходом топлива
+    obj: Any = Mock()
+
+    move_with_fuel_command: MacroCommand = MacroCommand(  # noqa: F841 local var not use
+        [CheckFuelComamnd(obj), Move(obj), BurnFuelCommand(obj)]
+    )
+
+    # команду поворота, которая еще и меняет вектор мгновенной скорости
+    rotate_with_change_velocity: MacroCommand = MacroCommand(  # noqa: F841 local var not use
+        [Rotate(obj), ChangeVelocityCommand(obj)]
     )
