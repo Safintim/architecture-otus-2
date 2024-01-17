@@ -8,6 +8,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.12"
 loguru = "^0.7.2"
+ioc = {git = "https://github.com/Safintim/ioc.git"}
 
 
 [tool.poetry.group.dev.dependencies]
@@ -35,6 +36,7 @@ lines-between-types = 1
 
 [tool.mypy]
 python_version = "3.12"
+ignore_missing_imports = true
 exclude = [
     ".venv",
     ".github",
